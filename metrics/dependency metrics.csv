@@ -1,0 +1,7 @@
+Dependency metrics,Sat, 15 May 2021 14:47:18 EEST
+Class,Cyclic,Dcy,Dcy*,Dpt,Dpt*,PDcy,PDpt
+"dagkalis.georgios.selectablerecyclerview.SelectableRecyclerViewAdapter",0,0,0,0,0,0,0
+
+Package,Cyclic,PDcy,PDpt,PDpt*
+"dagkalis.georgios.selectablerecyclerview",0,0,0,1
+
