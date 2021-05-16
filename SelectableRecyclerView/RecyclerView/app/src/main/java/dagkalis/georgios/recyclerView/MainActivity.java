@@ -103,17 +103,17 @@ public class MainActivity extends AppCompatActivity {
         checkIfAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(adapter.checkIfAllItemsSelected()){
-//                    toaster("all is checked");
-//                }else{
-//                    toaster("not all selected");
-//                }
-                ArrayList<String> strings = adapter.getSelectedItems();
-                System.out.println(strings);
-                toaster(strings.toString());
-                ArrayList<String> unselectedStrings = adapter.getUnselectedItems();
-                System.out.println(unselectedStrings);
-                toaster(unselectedStrings.toString());
+                if(adapter.checkIfAllItemsSelected()){
+                    toaster("all is checked");
+                }else{
+                    toaster("not all selected");
+                }
+//                ArrayList<String> strings = adapter.getSelectedItems();
+//                System.out.println(strings);
+//                toaster(strings.toString());
+//                ArrayList<String> unselectedStrings = adapter.getUnselectedItems();
+//                System.out.println(unselectedStrings);
+//                toaster(unselectedStrings.toString());
             }
         });
 
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void toaster(String mes){
-        Toast.makeText(context, mes, Toast.LENGTH_LONG).show();
+        Toast.makeText(context, mes, Toast.LENGTH_SHORT).show();
     }
 
 }

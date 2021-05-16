@@ -79,11 +79,6 @@ public class Adapter extends SelectableRecyclerViewAdapter<Adapter.CViewHolder>{
         toaster("At least one item selected");
     }
 
-    @Override
-    public int getItemCount() {
-        return super.getItemCount() + 6;
-    }
-
 
     @NonNull
     @Override
