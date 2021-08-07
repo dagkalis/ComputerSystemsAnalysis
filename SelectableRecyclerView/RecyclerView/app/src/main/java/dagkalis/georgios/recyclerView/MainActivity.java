@@ -13,9 +13,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import dagkalis.georgios.selectablerecyclerview.SelectableRecyclerViewAdapter;
+
 public class MainActivity extends AppCompatActivity {
 
-    Context context;
+    Context context = this;
     Adapter adapter;
     ImageButton binBtn;
     ImageButton binBtn3;
@@ -30,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        context = MainActivity.this;
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         ArrayList<String> t = new ArrayList<>();
@@ -117,8 +118,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        adapter.setOnAtLeastOneItemSelectedListener(() -> {
+            toaster("On at least one item selected");
+            setRecyclerViewIconsVisibility(true);
+        });
 
-
+        adapter.setOnNoItemSelectedListener(() -> {
+            toaster("OnNoItemSelectedListener");
+            setRecyclerViewIconsVisibility(false);
+        });
 
 
         setRecyclerViewIconsVisibility(false);
